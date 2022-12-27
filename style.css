@@ -70,6 +70,28 @@ body {
     text-decoration: none;
 }
 
+/* Square */
+
+.square {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #003bff;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate-reverse;  
+  }
+
+  @keyframes example {
+    0%   {background-color: #003bff; left:0px; top:0px;}
+    25%  {background-color: #000000; left:200px; top:0px;}
+    50%  {background-color: #eaeaea; left:200px; top:200px;}
+    75%  {background-color: #003bff; left:0px; top:200px;}
+    100% {background-color: #000000; left:0px; top:0px;}
+  }
+
 /* Newsletter starts */
 
 .newsletter {
