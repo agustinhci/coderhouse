@@ -207,28 +207,41 @@ footer .row ul li:first-child {
 
 /* H1 breakpoints-size */
 
-@media only screen and (min-width: 576px) {
+@media only screen and (max-width: 576px) {
     h1 {
-        font-size: 2.8em;
+        font-size: 5em;
     }
 
   }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 5em;
+    }
+
+    .newsletter {
+        flex-direction: column;
+    }
+
+    .newsletter-title {
+        font-size: 2.5em;
+    }
+
+    .newsletter form {
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
     h1 {
         font-size: 3.5em;
     }
-}
-
-@media only screen and (min-width: 992px) {
-    h1 {
-        font-size: 4em;
-    }
 
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (max-width: 1400px) {
     h1 {
-        font-size: 5em;
+        font-size: 2.8em;
     }
 }
