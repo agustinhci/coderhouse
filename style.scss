@@ -1,0 +1,340 @@
+/* General */
+
+$color_palette: #003bff;
+$color_dark: #000;
+$color_light: #fff;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: $color_dark;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $color_palette;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+section {
+    padding: 20px;
+}
+
+section h3 {
+    font-size: 2em;
+}
+
+/* Structure starts */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: $color_light;
+}
+
+.navbar-brand img {
+    height: 30px;
+}
+
+/* Hero starts */
+
+.hero {
+    padding: 40px;
+    color: $color_light;
+    background-color: $color_dark;
+    text-align: center;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h2 {
+        font-size: 1.2em !important;
+        font-weight: 400;
+        margin-top: 20px;
+    }
+
+    & button {
+        margin-top: 20px;
+        background-color: $color_dark;
+        border-radius: 50px;
+        border: 1.5px solid $color_light;
+        padding: 10px 14px;
+
+        a {
+            color: $color_light;
+            text-decoration: none;
+        }
+    }
+}
+
+/* Square */
+.square {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: $color_palette;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate-reverse;  
+}
+
+@keyframes example {
+0%   {background-color: $color_palette; left:0px; top:0px;}
+25%  {background-color: $color_dark; left:200px; top:0px;}
+50%  {background-color: #eaeaea; left:200px; top:200px;}
+75%  {background-color: $color_palette; left:0px; top:200px;}
+100% {background-color: $color_dark; left:0px; top:0px;}
+}
+
+/* Newsletter starts */
+
+.newsletter {
+    color: $color_light;
+    background-color: $color_palette;
+    margin: 40px 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .newsletter-title {
+        font-size: 1.4em;
+        margin-bottom: 0;
+        font-size: 1.8em;
+    }
+
+    & form {
+        input[type=text] {
+            border-radius: 10px;
+            border: 0;
+            height: 30px;
+            padding: 5px;
+        }
+    
+        input[type=submit] {
+            border-radius: 10px;
+            border: 0;
+            background-color: $color_dark;
+            padding: 0 15px;
+            height: 30px;
+            color: $color_light;
+            font-weight: 500;
+        }
+    }
+}
+
+/* Courses */
+
+.course-box {
+    display: flex;
+    flex-direction: column;
+
+    @for $number from 1 to 4 {
+
+        .course-image-#{$number} {
+            max-width: 500px;
+            width: 100%;
+            border-radius: 10px;
+            align-self: center;
+            filter: brightness(50%);
+            transition: .5s;
+        }
+
+        :hover {
+            filter: brightness(100%);
+        }
+    }
+
+    .course-content {
+        margin-top: 40px;
+
+        :first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+/* Us */
+
+.team {
+    .leader-box {
+        display: flex;
+        flex-direction: column;
+
+        @for $number from 1 through 4 {
+
+            .leader-photo-#{$number} {
+                border-radius: 50%;
+                max-width: 500px;
+                width: 100%;
+                align-self: center;
+                filter: brightness(50%);
+                transition: .5s;
+            }
+
+            :hover {
+                    filter: brightness(100%);
+                }
+        }
+
+        @for $number from 1 through 4 {
+            .leader-name-#{$number} {
+                margin-top: 20px;
+
+                :first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Partners starts */
+
+.partners {
+    color: $color_light;
+    background-color: $color_palette;
+
+    & .partners-box ul {
+        margin-top: 40px;
+        
+        li a i {
+            color: $color_light;
+            font-size: 3em;
+        }
+    }
+}
+
+/* Footer starts */
+
+footer {
+    color: $color_light;
+    background-color: $color_dark;
+    padding: 40px;
+
+    & a {
+        color: $color_light;
+    }
+
+    & .row {
+        ul {
+            li {
+                margin-top: 12px;
+                width: fit-content;
+        
+                a {
+                    font-size: .9em;
+                    font-weight: 500;
+                }
+        
+                a:hover {
+                    text-decoration: none;
+                }
+            }
+    
+            li:first-child {
+                margin-top: 0;
+            }
+        }
+
+        .footer-newsletter {
+            form {
+                display: flex;
+                flex-wrap: nowrap;
+
+                input[type=text] {
+                    border-radius: 10px;
+                    border: 0;
+                    height: 30px;
+                    padding: 5px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    & .lower-footer {
+        .copyright {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px #1a1a1a solid;
+            font-size: .8em;
+        }
+
+        .copyright,
+        .footer-social-icons {
+            text-align: center;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 10%;
+            margin-top: 40px;
+            font-size: 1.2em !important;
+
+            li {
+                a i {
+                    color: $color_palette;
+                }
+
+                a:hover i {
+                    color: $color_light;
+                }
+            }
+        }
+    }
+    
+}
+
+/* H1 breakpoints-size */
+
+@media only screen and (max-width: 576px) {
+    h1 {
+        font-size: 5em;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 5em;
+    }
+
+    .newsletter {
+        flex-direction: column;
+    }
+
+    .newsletter-title {
+        font-size: 2.5em;
+    }
+
+    .newsletter form {
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    h1 {
+        font-size: 3.5em;
+    }
+
+}
+
+@media only screen and (max-width: 1400px) {
+    h1 {
+        font-size: 2.8em;
+    }
+}
